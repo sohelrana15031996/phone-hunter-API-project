@@ -11,7 +11,7 @@ const phoneDisplay = phoneData => {
 
   phoneData.forEach(phone => {
     const everyPhoneDiv = document.createElement('div');
-    everyPhoneDiv.classList = `card w-96 bg-base-100 shadow-xl`;
+    everyPhoneDiv.classList = `card bg-base-100 shadow-xl`;
     everyPhoneDiv.innerHTML = `
       <figure class="px-10 pt-10">
             <img src="${phone.image}" alt="Shoes"
