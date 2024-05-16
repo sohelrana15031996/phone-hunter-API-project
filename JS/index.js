@@ -9,8 +9,16 @@ const phoneHunt = async (searchedPhone) => {
 const phoneDisplay = phoneData => {
   const phoneContainer = document.getElementById('phone-container');
   phoneContainer.textContent = '';
+  const set_atrr = document.getElementById('showing-more-result');
+  if (phoneData.length < 6){
+    set_atrr.classList.add('hidden');
+  }else{
+    set_atrr.classList.remove('hidden')
+  }
+  let slicedPhoneArray = phoneData.slice(0,6);
+  console.log(slicedPhoneArray.length);
 
-  phoneData.forEach(phone => {
+  slicedPhoneArray.forEach(phone => {
     const everyPhoneDiv = document.createElement('div');
     everyPhoneDiv.classList = `card bg-base-100 shadow-xl`;
     everyPhoneDiv.innerHTML = `
@@ -26,11 +34,10 @@ const phoneDisplay = phoneData => {
             </div>
           </div>
     `;
-
     phoneContainer.appendChild(everyPhoneDiv);
+    
   });
 }
-
 
 
 const searchbar = () =>{
@@ -40,4 +47,10 @@ const searchbar = () =>{
   phoneHunt(searchText);
 }
 
-phoneHunt('iphone');
+// loading spinner add while the data is loading.
+
+const loadingData = () => {
+
+}
+
+phoneHunt();

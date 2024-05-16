@@ -9,7 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="container mx-auto my-6 lg:my-12">
+<body class="container mx-auto my-6 lg:my-12 relative">
   <header></header>
   <main class="">
     <h2 class="text-6xl text-center">Phone Hunting</h2>
@@ -32,8 +32,23 @@
         </div>
       </div>
     </section>
+
+    <!-- Loading section while data is loading -->
+
+    <section class="flex justify-center items-center">
+      <div>
+        <span class="loading loading-spinner loading-lg"></span>
+      </div>
+    </section>
     <section class="">
       <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8 lg:p-12">
+      </div>
+    </section>
+
+    <section id="showing-more-result" class="flex justify-center items-center">
+      <div class="join grid grid-cols-2 w-2/6">
+        <button class="join-item btn btn-outline btn-primary">Previous page</button>
+        <button id="nextPage" class="join-item btn btn-outline btn-primary">Next</button>
       </div>
     </section>
   </main>
