@@ -37,13 +37,14 @@ const phoneDisplay = phoneData => {
     phoneContainer.appendChild(everyPhoneDiv);
     
   });
+  loadingSpiner(false);
 }
 
 
 const searchbar = () =>{
+  loadingSpiner(true);
   const serchField = document.getElementById('searchSection');
   const searchText = serchField.value;
-  console.log(searchText);
   phoneHunt(searchText);
 }
 
@@ -51,6 +52,15 @@ const searchbar = () =>{
 
 const loadingData = () => {
 
+}
+
+const loadingSpiner = (isSpining) => {
+  const spinner = document.getElementById('loadingSection');
+  if(isSpining){
+    spinner.classList.remove('hidden');
+  }else{
+    spinner.classList.add('hidden');
+  }
 }
 
 phoneHunt();
