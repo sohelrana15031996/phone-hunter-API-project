@@ -4,56 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Phone Hunting</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
+
+
+
 </head>
 
-<body class="container mx-auto my-6 lg:my-12 relative">
-  <header></header>
-  <main class="">
-    <h2 class="text-6xl text-center">Phone Hunting</h2>
-    <section class="mt-8">
-      <div class="flex flex-col gap-2 justify-center items-center">
-        <div>
-          <label class="input input-bordered flex items-center gap-2">
-            <input id="searchSection" type="text" class="grow" placeholder="Search" />
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
-              <path fill-rule="evenodd"
-                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                clip-rule="evenodd" />
-            </svg>
-          </label>
-        </div>
-        <div>
-          <button onclick="searchbar()" class="btn btn-primary w-40">
-            Search
-          </button>
-        </div>
+<body class="container mx-auto">
+  <header>
+    <h1 class="text-5xl text-center">Phone Hunting</h1>
+    <div class="flex justify-center items-center flex-col my-6 space-y-4">
+      <div class="form-control">
+        <input type="text" placeholder="Search" class="input input-bordered w-56" />
       </div>
-    </section>
-
-    <!-- Loading section while data is loading -->
-
-    <section id="loadingSection" class="flex justify-center items-center hidden">
       <div>
-        <span class="loading loading-spinner loading-lg"></span>
+        <button class="btn btn-primary"> Search Now</button>
       </div>
-    </section>
-    <section class="">
-      <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8 lg:p-12">
-      </div>
-    </section>
-
-    <section id="showing-more-result" class="flex justify-center items-center">
-      <div class="join grid grid-cols-2 w-2/6">
-        <button class="join-item btn btn-outline btn-primary">Show All</button>
-        
+    </div>
+    
+  </header>
+  <main>
+    <section>
+      <div id="phone-container">
+        <div class="card w-96 bg-base-100 shadow-xl">
+          <figure class="px-10 pt-10">
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title">Shoes!</h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <div class="card-actions">
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-  <footer></footer>
-
   <script src="JS/index.js"></script>
 </body>
 
