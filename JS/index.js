@@ -38,9 +38,9 @@ const displayPhone = (phone, clickedBtn) => {
   </figure>
   <div class="card-body items-center text-center">
     <h2 class="card-title">${element.phone_name}</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
+    <p>Click below to see phone features</p>
     <div class="card-actions">
-      <button onclick="showModal('${element.slug}')" class="btn btn-primary">Buy Now</button>
+      <button onclick="showModal('${element.slug}')" class="btn btn-primary">Show Details</button>
     </div>
   </div>
 </div>
@@ -98,9 +98,20 @@ const popModal = phodetails => {
   modalBody.showModal();
   modalBody.innerHTML = `
         <div class="modal-box">
-          <h3 class="font-bold text-lg">${phodetails.name}</h3>
+          <h3 class="font-bold text-lg text-center my-2">${phodetails.name}</h3>
           <img src="${phodetails.image}" class="max-w-full mx-auto"/>
-          <p class="py-4"><span>Storage: </span>${phodetails.mainFeatures.storage}</p>
+          <p class="py-4">
+          <span class="font-bold">Chip Set: </span>${phodetails?.mainFeatures?.chipSet}
+          </p>
+          <p class="py-4"><span class="font-bold">Storage: </span>${phodetails?.mainFeatures?.storage}</p>
+          <p class="py-4"><span class="font-bold">Display Size: </span>${phodetails?.mainFeatures?.displaySize}</p>
+          <p class="py-4"><span class="font-bold">Release Date: </span>${phodetails?.releaseDate}</p>
+          <p class="py-4"><span class="font-bold">WLAN: </span>${phodetails?.others?.WLAN}</p>
+          <p class="py-4"><span class="font-bold">Bluetooth: </span>${phodetails?.others?.Bluetooth}</p>
+          <p class="py-4"><span class="font-bold">GPS: </span>${phodetails?.others?.GPS}</p>
+          <p class="py-4"><span class="font-bold">NFC: </span>${phodetails?.others?.NFC}</p>
+          <p class="py-4"><span class="font-bold">Radio: </span>${phodetails?.others?.Radio}</p>
+          <p class="py-4"><span class="font-bold">USB: </span>${phodetails?.others?.USB}</p>
           <div class="modal-action">
             <form method="dialog">
               <!-- if there is a button in form, it will close the modal -->
