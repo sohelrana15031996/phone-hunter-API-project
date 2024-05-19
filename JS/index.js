@@ -40,7 +40,7 @@ const displayPhone = (phone, clickedBtn) => {
     <h2 class="card-title">${element.phone_name}</h2>
     <p>If a dog chews shoes whose shoes does he choose?</p>
     <div class="card-actions">
-      <button class="btn btn-primary">Buy Now</button>
+      <button onclick="showModal('${element.slug}')" class="btn btn-primary">Buy Now</button>
     </div>
   </div>
 </div>
@@ -73,10 +73,44 @@ const showAllClicked = () => {
 }
 
 const loadingBar = (loadingStatus) => {
-  const loadingSpining = document.getElementById('loadingBar');
+  const loadingSpining = document.getElementById('loadingBaar');
   if (loadingStatus === true) {
     loadingSpining.classList.remove('hidden');
+  } else {
+    loadingSpining.classList.add('hidden');
   }
+}
+
+// Modal pop uping code here.
+const showModal = async (id) => {
+  loadingBar(true)
+  const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
+  const data = await res.json()
+  const phodetails = data.data;
+  console.log(phodetails)
+  popModal(phodetails)
+
+}
+
+
+const popModal = phodetails => {
+  const modalBody = document.getElementById('show_modal');
+  modalBody.showModal();
+  modalBody.innerHTML = `
+        <div class="modal-box">
+          <h3 class="font-bold text-lg">${phodetails.name}</h3>
+          <img src="${phodetails.image}" class="max-w-full mx-auto"/>
+          <p class="py-4"><span>Storage: </span>${phodetails.mainFeatures.storage}</p>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+  `
+
+  loadingBar(false)
 }
 
 phoneAPI('iPhone');
