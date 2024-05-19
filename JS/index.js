@@ -40,7 +40,7 @@ const displayPhone = (phone, clickedBtn) => {
     <h2 class="card-title">${element.phone_name}</h2>
     <p>Click below to see phone features</p>
     <div class="card-actions">
-      <button onclick="showModal('${element.slug}')" class="btn btn-primary">Show Details</button>
+      <button onclick="showModal('${element.slug}')" class="btn btn-primary w-16 lg:w-32">Show Details</button>
     </div>
   </div>
 </div>
